@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account_analytic_budget_report_view_search" model="ir.ui.view">
+        <field name="name">account.analytic.budget.report.search</field>
+        <field name="model">account.analytic.budget.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="budget_id" />
+                <field name="position_id" />
+                <field name="analytic_plan_id" operator="child_of" />
+                <field name="account_id" />
+                <field name="date" />
+                <filter
+                    name="pending"
+                    string="Pending to Identify"
+                    domain="[('is_pending', '=', True)]"
+                />
+                <separator />
+                <filter name="filter_date" string="Date" date="date" />
+                <!-- Folded by default: the pivot needs the room -->
+                <searchpanel view_types="pivot,graph,list" fold="1">
+                    <field
+                        name="budget_id"
+                        string="Budget"
+                        icon="fa-money"
+                        select="one"
+                        limit="0"
+                    />
+                    <field
+                        name="analytic_plan_id"
+                        string="Analytic Plan"
+                        icon="fa-sitemap"
+                        select="one"
+                        limit="0"
+                    />
+                </searchpanel>
+                <group name="groupby" string="Group By">
+                    <filter
+                        name="group_by_budget"
+                        string="Budget"
+                        context="{'group_by': 'budget_id'}"
+                    />
+                    <filter
+                        name="group_by_position"
+                        string="Budgetary Position"
+                        context="{'group_by': 'position_id'}"
+                    />
+                    <filter
+                        name="group_by_level_1"
+                        string="Analytic Plan (Level 1)"
+                        context="{'group_by': 'analytic_plan_level_1_id'}"
+                    />
+                    <filter
+                        name="group_by_level_2"
+                        string="Analytic Plan (Level 2)"
+                        context="{'group_by': 'analytic_plan_level_2_id'}"
+                    />
+                    <filter
+                        name="group_by_item"
+                        string="Budget Item"
+                        context="{'group_by': 'item'}"
+                    />
+                    <filter
+                        name="group_by_month"
+                        string="Month"
+                        context="{'group_by': 'date:month'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="account_analytic_budget_report_view_pivot" model="ir.ui.view">
+        <field name="name">account.analytic.budget.report.pivot</field>
+        <field name="model">account.analytic.budget.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Budget vs Actual" js_class="analytic_plan_level_pivot">
+                <field name="analytic_plan_level_1_id" type="row" />
+                <field name="analytic_plan_level_2_id" type="row" />
+                <field name="analytic_plan_level_3_id" type="row" />
+                <field name="analytic_plan_level_4_id" type="row" />
+                <field name="item" type="row" />
+                <field name="budget_id" type="col" />
+                <field name="budget_amount" type="measure" />
+                <field name="actual_amount" type="measure" />
+                <field name="deviation_amount" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="account_analytic_budget_report_view_graph" model="ir.ui.view">
+        <field name="name">account.analytic.budget.report.graph</field>
+        <field name="model">account.analytic.budget.report</field>
+        <field name="arch" type="xml">
+            <graph string="Budget vs Actual" type="bar">
+                <field name="date" interval="month" />
+                <field name="budget_amount" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="account_analytic_budget_report_view_list" model="ir.ui.view">
+        <field name="name">account.analytic.budget.report.list</field>
+        <field name="model">account.analytic.budget.report</field>
+        <field name="arch" type="xml">
+            <list string="Budget vs Actual">
+                <field name="budget_id" />
+                <field name="date" />
+                <field name="position_id" />
+                <field name="analytic_plan_id" />
+                <field name="item" />
+                <field name="currency_id" column_invisible="True" />
+                <field name="budget_amount" sum="Budget" />
+                <field name="actual_amount" sum="Actual" />
+                <field name="deviation_amount" sum="Deviation" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_analytic_budget_report" model="ir.actions.act_window">
+        <field name="name">Budget vs Actual</field>
+        <field name="res_model">account.analytic.budget.report</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="search_view_id" ref="account_analytic_budget_report_view_search" />
+        <field name="domain">[('analytic_plan_level_0_id', '!=', False)]</field>
+        <field name="context">{
+            'pivot_column_groupby': ['budget_id', 'date:month'],
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No budget yet</p>
+            <p
+            >Budget and actual of every analytic plan and account, month by month. A budget on an analytic plan is an envelope: what is identified on its accounts and subplans is part of it, and the rest is pending to identify.</p>
+        </field>
+    </record>
+
+    <record id="crossovered_budget_view_form_budget_report" model="ir.ui.view">
+        <field name="name">crossovered.budget.form.budget.report</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget_oca.crossovered_budget_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        name="action_open_budget_report"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-bar-chart"
+                        string="Budget vs Actual"
+                        groups="account.group_account_user"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_analytic_budget_report"
+        name="Budget vs Actual"
+        action="action_analytic_budget_report"
+        parent="account.account_reports_management_menu"
+        groups="account.group_account_user"
+        sequence="45"
+    />
+</odoo>

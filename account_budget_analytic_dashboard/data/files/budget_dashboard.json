@@ -1,0 +1,1772 @@
+{
+ "version": 21,
+ "odooVersion": 12,
+ "revisionId": "START_REVISION",
+ "uniqueFigureIds": true,
+ "settings": {
+  "locale": {
+   "name": "English (US)",
+   "code": "en_US",
+   "thousandsSeparator": ",",
+   "decimalSeparator": ".",
+   "dateFormat": "mm/dd/yyyy",
+   "timeFormat": "hh:mm:ss",
+   "formulaArgSeparator": ",",
+   "weekStart": 7
+  }
+ },
+ "styles": {
+  "1": {
+   "textColor": "#01666b",
+   "bold": true,
+   "fontSize": 16
+  },
+  "2": {
+   "textColor": "#434343",
+   "bold": true,
+   "fontSize": 11
+  },
+  "3": {
+   "bold": true,
+   "fillColor": "#f8f9fa"
+  },
+  "4": {
+   "textColor": "#C62828",
+   "bold": true
+  }
+ },
+ "formats": {
+  "1": "#,##0",
+  "2": "0.0%"
+ },
+ "borders": {
+  "1": {
+   "bottom": {
+    "style": "thin",
+    "color": "#CCCCCC"
+   }
+  },
+  "2": {
+   "top": {
+    "style": "thin",
+    "color": "#CCCCCC"
+   }
+  }
+ },
+ "customTableStyles": {},
+ "pivots": {
+  "1": {
+   "type": "ODOO",
+   "id": "1",
+   "formulaId": "1",
+   "name": "Totals",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ]
+   ],
+   "context": {},
+   "rows": [],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_revenue",
+     "fieldName": "budget_revenue"
+    },
+    {
+     "id": "actual_revenue",
+     "fieldName": "actual_revenue"
+    },
+    {
+     "id": "budget_expense",
+     "fieldName": "budget_expense"
+    },
+    {
+     "id": "actual_expense",
+     "fieldName": "actual_expense"
+    },
+    {
+     "id": "budget_amount",
+     "fieldName": "budget_amount"
+    },
+    {
+     "id": "actual_amount",
+     "fieldName": "actual_amount"
+    },
+    {
+     "id": "deviation_amount",
+     "fieldName": "deviation_amount"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report"
+  },
+  "2": {
+   "type": "ODOO",
+   "id": "2",
+   "formulaId": "2",
+   "name": "By month",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ]
+   ],
+   "context": {},
+   "rows": [
+    {
+     "fieldName": "date",
+     "granularity": "month",
+     "order": "asc"
+    }
+   ],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_revenue",
+     "fieldName": "budget_revenue"
+    },
+    {
+     "id": "actual_revenue",
+     "fieldName": "actual_revenue"
+    },
+    {
+     "id": "budget_expense",
+     "fieldName": "budget_expense"
+    },
+    {
+     "id": "actual_expense",
+     "fieldName": "actual_expense"
+    },
+    {
+     "id": "budget_amount",
+     "fieldName": "budget_amount"
+    },
+    {
+     "id": "actual_amount",
+     "fieldName": "actual_amount"
+    },
+    {
+     "id": "deviation_amount",
+     "fieldName": "deviation_amount"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report"
+  },
+  "3": {
+   "type": "ODOO",
+   "id": "3",
+   "formulaId": "3",
+   "name": "By line",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ]
+   ],
+   "context": {},
+   "rows": [
+    {
+     "fieldName": "analytic_plan_level_1_id"
+    }
+   ],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_revenue",
+     "fieldName": "budget_revenue"
+    },
+    {
+     "id": "actual_revenue",
+     "fieldName": "actual_revenue"
+    },
+    {
+     "id": "budget_expense",
+     "fieldName": "budget_expense"
+    },
+    {
+     "id": "actual_expense",
+     "fieldName": "actual_expense"
+    },
+    {
+     "id": "budget_amount",
+     "fieldName": "budget_amount"
+    },
+    {
+     "id": "actual_amount",
+     "fieldName": "actual_amount"
+    },
+    {
+     "id": "deviation_amount",
+     "fieldName": "deviation_amount"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report",
+   "sortedColumn": {
+    "groupId": [
+     [],
+     []
+    ],
+    "measure": "budget_revenue",
+    "order": "desc"
+   }
+  },
+  "4": {
+   "type": "ODOO",
+   "id": "4",
+   "formulaId": "4",
+   "name": "Pending by line",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    "&",
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ],
+    [
+     "is_pending",
+     "=",
+     true
+    ]
+   ],
+   "context": {},
+   "rows": [
+    {
+     "fieldName": "analytic_plan_level_1_id"
+    }
+   ],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_revenue",
+     "fieldName": "budget_revenue"
+    },
+    {
+     "id": "budget_expense",
+     "fieldName": "budget_expense"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report"
+  },
+  "5": {
+   "type": "ODOO",
+   "id": "5",
+   "formulaId": "5",
+   "name": "By position",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ]
+   ],
+   "context": {},
+   "rows": [
+    {
+     "fieldName": "position_id"
+    }
+   ],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_amount",
+     "fieldName": "budget_amount"
+    },
+    {
+     "id": "actual_amount",
+     "fieldName": "actual_amount"
+    },
+    {
+     "id": "deviation_amount",
+     "fieldName": "deviation_amount"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report"
+  },
+  "6": {
+   "type": "ODOO",
+   "id": "6",
+   "formulaId": "6",
+   "name": "Budgets",
+   "model": "account.analytic.budget.report",
+   "domain": [
+    [
+     "analytic_plan_level_0_id",
+     "!=",
+     false
+    ]
+   ],
+   "context": {},
+   "rows": [
+    {
+     "fieldName": "budget_id"
+    }
+   ],
+   "columns": [],
+   "measures": [
+    {
+     "id": "budget_amount",
+     "fieldName": "budget_amount"
+    }
+   ],
+   "fieldMatching": {
+    "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001": {
+     "chain": "budget_id",
+     "type": "many2one"
+    },
+    "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002": {
+     "chain": "date",
+     "type": "date",
+     "offset": 0
+    },
+    "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003": {
+     "chain": "analytic_plan_level_1_id",
+     "type": "many2one"
+    }
+   },
+   "actionXmlId": "account_budget_analytic_dashboard.action_analytic_budget_report"
+  }
+ },
+ "pivotNextId": 7,
+ "lists": {},
+ "listNextId": 1,
+ "globalFilters": [
+  {
+   "id": "b1b2c3d4-0001-4a6e-9a51-6e7d0a7b0001",
+   "type": "relation",
+   "label": "Budget",
+   "modelName": "crossovered.budget",
+   "defaultValue": [],
+   "defaultValueDisplayNames": []
+  },
+  {
+   "id": "b1b2c3d4-0002-4a6e-9a51-6e7d0a7b0002",
+   "type": "date",
+   "label": "Period",
+   "defaultValue": "year_to_date",
+   "rangeType": "relative"
+  },
+  {
+   "id": "b1b2c3d4-0003-4a6e-9a51-6e7d0a7b0003",
+   "type": "relation",
+   "label": "Line",
+   "modelName": "account.analytic.plan",
+   "defaultValue": [],
+   "defaultValueDisplayNames": []
+  }
+ ],
+ "chartOdooMenusReferences": {
+  "b1b2c3d4-1000-4a6e-9a51-6e7d0a7b1000": "account_budget_analytic_dashboard.menu_analytic_budget_report"
+ },
+ "sheets": [
+  {
+   "id": "dashboard",
+   "name": "Dashboard",
+   "colNumber": 26,
+   "rowNumber": 56,
+   "rows": {
+    "6": {
+     "size": 40
+    }
+   },
+   "cols": {
+    "0": {
+     "size": 220
+    },
+    "1": {
+     "size": 105
+    },
+    "2": {
+     "size": 105
+    },
+    "3": {
+     "size": 105
+    },
+    "4": {
+     "size": 105
+    },
+    "5": {
+     "size": 105
+    },
+    "6": {
+     "size": 105
+    },
+    "7": {
+     "size": 105
+    },
+    "8": {
+     "size": 105
+    },
+    "9": {
+     "size": 105
+    },
+    "10": {
+     "size": 105
+    }
+   },
+   "merges": [],
+   "cells": {
+    "F7": {
+     "content": "=IF(Data!B12>1,_t(\"Choose one budget in the Budget filter: the figures of several budgets add up.\"),\"\")"
+    },
+    "A7": {
+     "content": "=_t(\"Budget and actual by month\")"
+    },
+    "A23": {
+     "content": "=_t(\"Budget and actual by line\")"
+    },
+    "A24": {
+     "content": "=_t(\"Line\")"
+    },
+    "B24": {
+     "content": "=_t(\"Revenue budget\")"
+    },
+    "C24": {
+     "content": "=_t(\"Revenue\")"
+    },
+    "D24": {
+     "content": "=_t(\"Achieved\")"
+    },
+    "E24": {
+     "content": "=_t(\"Pending\")"
+    },
+    "F24": {
+     "content": "=_t(\"Expense budget\")"
+    },
+    "G24": {
+     "content": "=_t(\"Expenses\")"
+    },
+    "H24": {
+     "content": "=_t(\"Spent\")"
+    },
+    "I24": {
+     "content": "=_t(\"Result budget\")"
+    },
+    "J24": {
+     "content": "=_t(\"Result\")"
+    },
+    "K24": {
+     "content": "=_t(\"Deviation\")"
+    },
+    "A25": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",1),\"\")"
+    },
+    "B25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "C25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "D25": {
+     "content": "=IF(OR(B25=\"\",B25=0),\"\",IFERROR(C25/B25,\"\"))"
+    },
+    "E25": {
+     "content": "=IF(OR(A25=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",1),0))"
+    },
+    "F25": {
+     "content": "=IF(OR(A25=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "G25": {
+     "content": "=IF(OR(A25=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "H25": {
+     "content": "=IF(OR(F25=\"\",F25=0),\"\",IFERROR(G25/F25,\"\"))"
+    },
+    "I25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "J25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "K25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",1))"
+    },
+    "A26": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",2),\"\")"
+    },
+    "B26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "C26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "D26": {
+     "content": "=IF(OR(B26=\"\",B26=0),\"\",IFERROR(C26/B26,\"\"))"
+    },
+    "E26": {
+     "content": "=IF(OR(A26=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",2),0))"
+    },
+    "F26": {
+     "content": "=IF(OR(A26=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "G26": {
+     "content": "=IF(OR(A26=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "H26": {
+     "content": "=IF(OR(F26=\"\",F26=0),\"\",IFERROR(G26/F26,\"\"))"
+    },
+    "I26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "J26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "K26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",2))"
+    },
+    "A27": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",3),\"\")"
+    },
+    "B27": {
+     "content": "=IF(OR(A27=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "C27": {
+     "content": "=IF(OR(A27=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "D27": {
+     "content": "=IF(OR(B27=\"\",B27=0),\"\",IFERROR(C27/B27,\"\"))"
+    },
+    "E27": {
+     "content": "=IF(OR(A27=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",3),0))"
+    },
+    "F27": {
+     "content": "=IF(OR(A27=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "G27": {
+     "content": "=IF(OR(A27=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "H27": {
+     "content": "=IF(OR(F27=\"\",F27=0),\"\",IFERROR(G27/F27,\"\"))"
+    },
+    "I27": {
+     "content": "=IF(OR(A27=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "J27": {
+     "content": "=IF(OR(A27=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "K27": {
+     "content": "=IF(OR(A27=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",3))"
+    },
+    "A28": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",4),\"\")"
+    },
+    "B28": {
+     "content": "=IF(OR(A28=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "C28": {
+     "content": "=IF(OR(A28=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "D28": {
+     "content": "=IF(OR(B28=\"\",B28=0),\"\",IFERROR(C28/B28,\"\"))"
+    },
+    "E28": {
+     "content": "=IF(OR(A28=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",4),0))"
+    },
+    "F28": {
+     "content": "=IF(OR(A28=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "G28": {
+     "content": "=IF(OR(A28=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "H28": {
+     "content": "=IF(OR(F28=\"\",F28=0),\"\",IFERROR(G28/F28,\"\"))"
+    },
+    "I28": {
+     "content": "=IF(OR(A28=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "J28": {
+     "content": "=IF(OR(A28=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "K28": {
+     "content": "=IF(OR(A28=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",4))"
+    },
+    "A29": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",5),\"\")"
+    },
+    "B29": {
+     "content": "=IF(OR(A29=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "C29": {
+     "content": "=IF(OR(A29=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "D29": {
+     "content": "=IF(OR(B29=\"\",B29=0),\"\",IFERROR(C29/B29,\"\"))"
+    },
+    "E29": {
+     "content": "=IF(OR(A29=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",5),0))"
+    },
+    "F29": {
+     "content": "=IF(OR(A29=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "G29": {
+     "content": "=IF(OR(A29=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "H29": {
+     "content": "=IF(OR(F29=\"\",F29=0),\"\",IFERROR(G29/F29,\"\"))"
+    },
+    "I29": {
+     "content": "=IF(OR(A29=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "J29": {
+     "content": "=IF(OR(A29=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "K29": {
+     "content": "=IF(OR(A29=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",5))"
+    },
+    "A30": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",6),\"\")"
+    },
+    "B30": {
+     "content": "=IF(OR(A30=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "C30": {
+     "content": "=IF(OR(A30=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "D30": {
+     "content": "=IF(OR(B30=\"\",B30=0),\"\",IFERROR(C30/B30,\"\"))"
+    },
+    "E30": {
+     "content": "=IF(OR(A30=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",6),0))"
+    },
+    "F30": {
+     "content": "=IF(OR(A30=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "G30": {
+     "content": "=IF(OR(A30=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "H30": {
+     "content": "=IF(OR(F30=\"\",F30=0),\"\",IFERROR(G30/F30,\"\"))"
+    },
+    "I30": {
+     "content": "=IF(OR(A30=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "J30": {
+     "content": "=IF(OR(A30=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "K30": {
+     "content": "=IF(OR(A30=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",6))"
+    },
+    "A31": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",7),\"\")"
+    },
+    "B31": {
+     "content": "=IF(OR(A31=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "C31": {
+     "content": "=IF(OR(A31=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "D31": {
+     "content": "=IF(OR(B31=\"\",B31=0),\"\",IFERROR(C31/B31,\"\"))"
+    },
+    "E31": {
+     "content": "=IF(OR(A31=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",7),0))"
+    },
+    "F31": {
+     "content": "=IF(OR(A31=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "G31": {
+     "content": "=IF(OR(A31=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "H31": {
+     "content": "=IF(OR(F31=\"\",F31=0),\"\",IFERROR(G31/F31,\"\"))"
+    },
+    "I31": {
+     "content": "=IF(OR(A31=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "J31": {
+     "content": "=IF(OR(A31=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "K31": {
+     "content": "=IF(OR(A31=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",7))"
+    },
+    "A32": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",8),\"\")"
+    },
+    "B32": {
+     "content": "=IF(OR(A32=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "C32": {
+     "content": "=IF(OR(A32=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "D32": {
+     "content": "=IF(OR(B32=\"\",B32=0),\"\",IFERROR(C32/B32,\"\"))"
+    },
+    "E32": {
+     "content": "=IF(OR(A32=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",8),0))"
+    },
+    "F32": {
+     "content": "=IF(OR(A32=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "G32": {
+     "content": "=IF(OR(A32=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "H32": {
+     "content": "=IF(OR(F32=\"\",F32=0),\"\",IFERROR(G32/F32,\"\"))"
+    },
+    "I32": {
+     "content": "=IF(OR(A32=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "J32": {
+     "content": "=IF(OR(A32=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "K32": {
+     "content": "=IF(OR(A32=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",8))"
+    },
+    "A33": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",9),\"\")"
+    },
+    "B33": {
+     "content": "=IF(OR(A33=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "C33": {
+     "content": "=IF(OR(A33=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "D33": {
+     "content": "=IF(OR(B33=\"\",B33=0),\"\",IFERROR(C33/B33,\"\"))"
+    },
+    "E33": {
+     "content": "=IF(OR(A33=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",9),0))"
+    },
+    "F33": {
+     "content": "=IF(OR(A33=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "G33": {
+     "content": "=IF(OR(A33=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "H33": {
+     "content": "=IF(OR(F33=\"\",F33=0),\"\",IFERROR(G33/F33,\"\"))"
+    },
+    "I33": {
+     "content": "=IF(OR(A33=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "J33": {
+     "content": "=IF(OR(A33=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "K33": {
+     "content": "=IF(OR(A33=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",9))"
+    },
+    "A34": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",10),\"\")"
+    },
+    "B34": {
+     "content": "=IF(OR(A34=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "C34": {
+     "content": "=IF(OR(A34=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "D34": {
+     "content": "=IF(OR(B34=\"\",B34=0),\"\",IFERROR(C34/B34,\"\"))"
+    },
+    "E34": {
+     "content": "=IF(OR(A34=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",10),0))"
+    },
+    "F34": {
+     "content": "=IF(OR(A34=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "G34": {
+     "content": "=IF(OR(A34=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "H34": {
+     "content": "=IF(OR(F34=\"\",F34=0),\"\",IFERROR(G34/F34,\"\"))"
+    },
+    "I34": {
+     "content": "=IF(OR(A34=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "J34": {
+     "content": "=IF(OR(A34=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "K34": {
+     "content": "=IF(OR(A34=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",10))"
+    },
+    "A35": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",11),\"\")"
+    },
+    "B35": {
+     "content": "=IF(OR(A35=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "C35": {
+     "content": "=IF(OR(A35=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "D35": {
+     "content": "=IF(OR(B35=\"\",B35=0),\"\",IFERROR(C35/B35,\"\"))"
+    },
+    "E35": {
+     "content": "=IF(OR(A35=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",11),0))"
+    },
+    "F35": {
+     "content": "=IF(OR(A35=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "G35": {
+     "content": "=IF(OR(A35=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "H35": {
+     "content": "=IF(OR(F35=\"\",F35=0),\"\",IFERROR(G35/F35,\"\"))"
+    },
+    "I35": {
+     "content": "=IF(OR(A35=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "J35": {
+     "content": "=IF(OR(A35=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "K35": {
+     "content": "=IF(OR(A35=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",11))"
+    },
+    "A36": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",12),\"\")"
+    },
+    "B36": {
+     "content": "=IF(OR(A36=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "C36": {
+     "content": "=IF(OR(A36=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "D36": {
+     "content": "=IF(OR(B36=\"\",B36=0),\"\",IFERROR(C36/B36,\"\"))"
+    },
+    "E36": {
+     "content": "=IF(OR(A36=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",12),0))"
+    },
+    "F36": {
+     "content": "=IF(OR(A36=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "G36": {
+     "content": "=IF(OR(A36=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "H36": {
+     "content": "=IF(OR(F36=\"\",F36=0),\"\",IFERROR(G36/F36,\"\"))"
+    },
+    "I36": {
+     "content": "=IF(OR(A36=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "J36": {
+     "content": "=IF(OR(A36=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "K36": {
+     "content": "=IF(OR(A36=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",12))"
+    },
+    "A37": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",13),\"\")"
+    },
+    "B37": {
+     "content": "=IF(OR(A37=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "C37": {
+     "content": "=IF(OR(A37=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "D37": {
+     "content": "=IF(OR(B37=\"\",B37=0),\"\",IFERROR(C37/B37,\"\"))"
+    },
+    "E37": {
+     "content": "=IF(OR(A37=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",13),0))"
+    },
+    "F37": {
+     "content": "=IF(OR(A37=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "G37": {
+     "content": "=IF(OR(A37=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "H37": {
+     "content": "=IF(OR(F37=\"\",F37=0),\"\",IFERROR(G37/F37,\"\"))"
+    },
+    "I37": {
+     "content": "=IF(OR(A37=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "J37": {
+     "content": "=IF(OR(A37=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "K37": {
+     "content": "=IF(OR(A37=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",13))"
+    },
+    "A38": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",14),\"\")"
+    },
+    "B38": {
+     "content": "=IF(OR(A38=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "C38": {
+     "content": "=IF(OR(A38=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "D38": {
+     "content": "=IF(OR(B38=\"\",B38=0),\"\",IFERROR(C38/B38,\"\"))"
+    },
+    "E38": {
+     "content": "=IF(OR(A38=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",14),0))"
+    },
+    "F38": {
+     "content": "=IF(OR(A38=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "G38": {
+     "content": "=IF(OR(A38=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "H38": {
+     "content": "=IF(OR(F38=\"\",F38=0),\"\",IFERROR(G38/F38,\"\"))"
+    },
+    "I38": {
+     "content": "=IF(OR(A38=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "J38": {
+     "content": "=IF(OR(A38=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "K38": {
+     "content": "=IF(OR(A38=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",14))"
+    },
+    "A39": {
+     "content": "=IFERROR(PIVOT.HEADER(3,\"#analytic_plan_level_1_id\",15),\"\")"
+    },
+    "B39": {
+     "content": "=IF(OR(A39=\"\"),\"\",PIVOT.VALUE(3,\"budget_revenue\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "C39": {
+     "content": "=IF(OR(A39=\"\"),\"\",PIVOT.VALUE(3,\"actual_revenue\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "D39": {
+     "content": "=IF(OR(B39=\"\",B39=0),\"\",IFERROR(C39/B39,\"\"))"
+    },
+    "E39": {
+     "content": "=IF(OR(A39=\"\"),\"\",IFERROR(PIVOT.VALUE(4,\"budget_revenue\",\"#analytic_plan_level_1_id\",15),0))"
+    },
+    "F39": {
+     "content": "=IF(OR(A39=\"\"),\"\",-PIVOT.VALUE(3,\"budget_expense\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "G39": {
+     "content": "=IF(OR(A39=\"\"),\"\",-PIVOT.VALUE(3,\"actual_expense\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "H39": {
+     "content": "=IF(OR(F39=\"\",F39=0),\"\",IFERROR(G39/F39,\"\"))"
+    },
+    "I39": {
+     "content": "=IF(OR(A39=\"\"),\"\",PIVOT.VALUE(3,\"budget_amount\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "J39": {
+     "content": "=IF(OR(A39=\"\"),\"\",PIVOT.VALUE(3,\"actual_amount\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "K39": {
+     "content": "=IF(OR(A39=\"\"),\"\",PIVOT.VALUE(3,\"deviation_amount\",\"#analytic_plan_level_1_id\",15))"
+    },
+    "A40": {
+     "content": "=_t(\"Total\")"
+    },
+    "B40": {
+     "content": "=PIVOT.VALUE(3,\"budget_revenue\")"
+    },
+    "C40": {
+     "content": "=PIVOT.VALUE(3,\"actual_revenue\")"
+    },
+    "D40": {
+     "content": "=IF(OR(B40=\"\",B40=0),\"\",IFERROR(C40/B40,\"\"))"
+    },
+    "E40": {
+     "content": "=IFERROR(PIVOT.VALUE(4,\"budget_revenue\"),0)"
+    },
+    "F40": {
+     "content": "=-PIVOT.VALUE(3,\"budget_expense\")"
+    },
+    "G40": {
+     "content": "=-PIVOT.VALUE(3,\"actual_expense\")"
+    },
+    "H40": {
+     "content": "=IF(OR(F40=\"\",F40=0),\"\",IFERROR(G40/F40,\"\"))"
+    },
+    "I40": {
+     "content": "=PIVOT.VALUE(3,\"budget_amount\")"
+    },
+    "J40": {
+     "content": "=PIVOT.VALUE(3,\"actual_amount\")"
+    },
+    "K40": {
+     "content": "=PIVOT.VALUE(3,\"deviation_amount\")"
+    },
+    "A43": {
+     "content": "=_t(\"Budget and actual by budgetary position\")"
+    },
+    "A44": {
+     "content": "=_t(\"Budgetary position\")"
+    },
+    "B44": {
+     "content": "=_t(\"Budget\")"
+    },
+    "C44": {
+     "content": "=_t(\"Actual\")"
+    },
+    "D44": {
+     "content": "=_t(\"Deviation\")"
+    },
+    "E44": {
+     "content": "=_t(\"Achieved\")"
+    },
+    "A45": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",1),\"\")"
+    },
+    "B45": {
+     "content": "=IF(OR(A45=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",1))"
+    },
+    "C45": {
+     "content": "=IF(OR(A45=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",1))"
+    },
+    "D45": {
+     "content": "=IF(OR(A45=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",1))"
+    },
+    "E45": {
+     "content": "=IF(OR(B45=\"\",B45=0),\"\",IFERROR(C45/B45,\"\"))"
+    },
+    "A46": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",2),\"\")"
+    },
+    "B46": {
+     "content": "=IF(OR(A46=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",2))"
+    },
+    "C46": {
+     "content": "=IF(OR(A46=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",2))"
+    },
+    "D46": {
+     "content": "=IF(OR(A46=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",2))"
+    },
+    "E46": {
+     "content": "=IF(OR(B46=\"\",B46=0),\"\",IFERROR(C46/B46,\"\"))"
+    },
+    "A47": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",3),\"\")"
+    },
+    "B47": {
+     "content": "=IF(OR(A47=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",3))"
+    },
+    "C47": {
+     "content": "=IF(OR(A47=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",3))"
+    },
+    "D47": {
+     "content": "=IF(OR(A47=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",3))"
+    },
+    "E47": {
+     "content": "=IF(OR(B47=\"\",B47=0),\"\",IFERROR(C47/B47,\"\"))"
+    },
+    "A48": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",4),\"\")"
+    },
+    "B48": {
+     "content": "=IF(OR(A48=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",4))"
+    },
+    "C48": {
+     "content": "=IF(OR(A48=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",4))"
+    },
+    "D48": {
+     "content": "=IF(OR(A48=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",4))"
+    },
+    "E48": {
+     "content": "=IF(OR(B48=\"\",B48=0),\"\",IFERROR(C48/B48,\"\"))"
+    },
+    "A49": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",5),\"\")"
+    },
+    "B49": {
+     "content": "=IF(OR(A49=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",5))"
+    },
+    "C49": {
+     "content": "=IF(OR(A49=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",5))"
+    },
+    "D49": {
+     "content": "=IF(OR(A49=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",5))"
+    },
+    "E49": {
+     "content": "=IF(OR(B49=\"\",B49=0),\"\",IFERROR(C49/B49,\"\"))"
+    },
+    "A50": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",6),\"\")"
+    },
+    "B50": {
+     "content": "=IF(OR(A50=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",6))"
+    },
+    "C50": {
+     "content": "=IF(OR(A50=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",6))"
+    },
+    "D50": {
+     "content": "=IF(OR(A50=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",6))"
+    },
+    "E50": {
+     "content": "=IF(OR(B50=\"\",B50=0),\"\",IFERROR(C50/B50,\"\"))"
+    },
+    "A51": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",7),\"\")"
+    },
+    "B51": {
+     "content": "=IF(OR(A51=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",7))"
+    },
+    "C51": {
+     "content": "=IF(OR(A51=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",7))"
+    },
+    "D51": {
+     "content": "=IF(OR(A51=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",7))"
+    },
+    "E51": {
+     "content": "=IF(OR(B51=\"\",B51=0),\"\",IFERROR(C51/B51,\"\"))"
+    },
+    "A52": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",8),\"\")"
+    },
+    "B52": {
+     "content": "=IF(OR(A52=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",8))"
+    },
+    "C52": {
+     "content": "=IF(OR(A52=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",8))"
+    },
+    "D52": {
+     "content": "=IF(OR(A52=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",8))"
+    },
+    "E52": {
+     "content": "=IF(OR(B52=\"\",B52=0),\"\",IFERROR(C52/B52,\"\"))"
+    },
+    "A53": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",9),\"\")"
+    },
+    "B53": {
+     "content": "=IF(OR(A53=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",9))"
+    },
+    "C53": {
+     "content": "=IF(OR(A53=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",9))"
+    },
+    "D53": {
+     "content": "=IF(OR(A53=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",9))"
+    },
+    "E53": {
+     "content": "=IF(OR(B53=\"\",B53=0),\"\",IFERROR(C53/B53,\"\"))"
+    },
+    "A54": {
+     "content": "=IFERROR(PIVOT.HEADER(5,\"#position_id\",10),\"\")"
+    },
+    "B54": {
+     "content": "=IF(OR(A54=\"\"),\"\",PIVOT.VALUE(5,\"budget_amount\",\"#position_id\",10))"
+    },
+    "C54": {
+     "content": "=IF(OR(A54=\"\"),\"\",PIVOT.VALUE(5,\"actual_amount\",\"#position_id\",10))"
+    },
+    "D54": {
+     "content": "=IF(OR(A54=\"\"),\"\",PIVOT.VALUE(5,\"deviation_amount\",\"#position_id\",10))"
+    },
+    "E54": {
+     "content": "=IF(OR(B54=\"\",B54=0),\"\",IFERROR(C54/B54,\"\"))"
+    }
+   },
+   "styles": {
+    "F7": 4,
+    "A7": 1,
+    "A23": 1,
+    "A24:K24": 2,
+    "A40:K40": 3,
+    "A43": 1,
+    "A44:E44": 2
+   },
+   "formats": {
+    "B25:C40": 1,
+    "E25:G40": 1,
+    "I25:K40": 1,
+    "D25:D40": 2,
+    "H25:H40": 2,
+    "B45:D54": 1,
+    "E45:E54": 2
+   },
+   "borders": {
+    "A7:K7": 1,
+    "A23:K23": 1,
+    "A40:K40": 2,
+    "A43:E43": 1
+   },
+   "conditionalFormats": [
+    {
+     "id": "line-positive",
+     "ranges": [
+      "J25:K40"
+     ],
+     "rule": {
+      "type": "CellIsRule",
+      "operator": "GreaterThan",
+      "values": [
+       "0"
+      ],
+      "style": {
+       "textColor": "#2E7D32"
+      }
+     }
+    },
+    {
+     "id": "line-negative",
+     "ranges": [
+      "J25:K40"
+     ],
+     "rule": {
+      "type": "CellIsRule",
+      "operator": "LessThan",
+      "values": [
+       "0"
+      ],
+      "style": {
+       "textColor": "#C62828"
+      }
+     }
+    },
+    {
+     "id": "position-positive",
+     "ranges": [
+      "D45:D54"
+     ],
+     "rule": {
+      "type": "CellIsRule",
+      "operator": "GreaterThan",
+      "values": [
+       "0"
+      ],
+      "style": {
+       "textColor": "#2E7D32"
+      }
+     }
+    },
+    {
+     "id": "position-negative",
+     "ranges": [
+      "D45:D54"
+     ],
+     "rule": {
+      "type": "CellIsRule",
+      "operator": "LessThan",
+      "values": [
+       "0"
+      ],
+      "style": {
+       "textColor": "#C62828"
+      }
+     }
+    }
+   ],
+   "figures": [
+    {
+     "id": "b1b2c3d4-1001-4a6e-9a51-6e7d0a7b1001",
+     "x": 0,
+     "y": 11,
+     "width": 220,
+     "height": 109,
+     "tag": "chart",
+     "data": {
+      "type": "scorecard",
+      "title": {
+       "text": "Revenue",
+       "color": "#434343",
+       "bold": true
+      },
+      "keyValue": "Data!B1",
+      "baseline": "Data!B2",
+      "baselineMode": "difference",
+      "baselineDescr": "vs budget",
+      "background": "#FFFFFF",
+      "humanize": false,
+      "baselineColorUp": "#00A04A",
+      "baselineColorDown": "#DC6965"
+     }
+    },
+    {
+     "id": "b1b2c3d4-1002-4a6e-9a51-6e7d0a7b1002",
+     "x": 230,
+     "y": 11,
+     "width": 220,
+     "height": 109,
+     "tag": "chart",
+     "data": {
+      "type": "scorecard",
+      "title": {
+       "text": "Expenses",
+       "color": "#434343",
+       "bold": true
+      },
+      "keyValue": "Data!B3",
+      "baseline": "Data!B4",
+      "baselineMode": "difference",
+      "baselineDescr": "vs budget",
+      "background": "#FFFFFF",
+      "humanize": false,
+      "baselineColorUp": "#DC6965",
+      "baselineColorDown": "#00A04A"
+     }
+    },
+    {
+     "id": "b1b2c3d4-1003-4a6e-9a51-6e7d0a7b1003",
+     "x": 460,
+     "y": 11,
+     "width": 220,
+     "height": 109,
+     "tag": "chart",
+     "data": {
+      "type": "scorecard",
+      "title": {
+       "text": "Result",
+       "color": "#434343",
+       "bold": true
+      },
+      "keyValue": "Data!B5",
+      "baseline": "Data!B6",
+      "baselineMode": "difference",
+      "baselineDescr": "vs budget",
+      "background": "#FFFFFF",
+      "humanize": false,
+      "baselineColorUp": "#00A04A",
+      "baselineColorDown": "#DC6965"
+     }
+    },
+    {
+     "id": "b1b2c3d4-1004-4a6e-9a51-6e7d0a7b1004",
+     "x": 690,
+     "y": 11,
+     "width": 220,
+     "height": 109,
+     "tag": "chart",
+     "data": {
+      "type": "scorecard",
+      "title": {
+       "text": "Pending to identify",
+       "color": "#434343",
+       "bold": true
+      },
+      "keyValue": "Data!B7",
+      "baseline": "Data!D7",
+      "baselineMode": "text",
+      "baselineDescr": "",
+      "background": "#FFFFFF",
+      "humanize": false,
+      "baselineColorUp": "#00A04A",
+      "baselineColorDown": "#DC6965"
+     }
+    },
+    {
+     "id": "b1b2c3d4-1000-4a6e-9a51-6e7d0a7b1000",
+     "x": 0,
+     "y": 178,
+     "width": 1100,
+     "height": 345,
+     "tag": "chart",
+     "data": {
+      "type": "combo",
+      "title": {
+       "text": ""
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "dataSetsHaveTitle": true,
+      "dataSets": [
+       {
+        "dataRange": "Data!B14:B26",
+        "type": "bar"
+       },
+       {
+        "dataRange": "Data!C14:C26",
+        "type": "bar"
+       },
+       {
+        "dataRange": "Data!D14:D26",
+        "type": "line"
+       },
+       {
+        "dataRange": "Data!E14:E26",
+        "type": "line"
+       }
+      ],
+      "labelRange": "Data!A15:A26",
+      "aggregated": false,
+      "showValues": false
+     }
+    }
+   ],
+   "tables": [],
+   "areGridLinesVisible": false,
+   "isVisible": true,
+   "headerGroups": {
+    "ROW": [],
+    "COL": []
+   },
+   "dataValidationRules": [],
+   "comments": {}
+  },
+  {
+   "id": "data",
+   "name": "Data",
+   "colNumber": 26,
+   "rowNumber": 28,
+   "rows": {},
+   "cols": {},
+   "merges": [],
+   "cells": {
+    "A1": {
+     "content": "=_t(\"Actual revenue\")"
+    },
+    "B1": {
+     "content": "=PIVOT.VALUE(1,\"actual_revenue\")"
+    },
+    "A2": {
+     "content": "=_t(\"Budget revenue\")"
+    },
+    "B2": {
+     "content": "=PIVOT.VALUE(1,\"budget_revenue\")"
+    },
+    "A3": {
+     "content": "=_t(\"Actual expenses\")"
+    },
+    "B3": {
+     "content": "=-PIVOT.VALUE(1,\"actual_expense\")"
+    },
+    "A4": {
+     "content": "=_t(\"Budget expenses\")"
+    },
+    "B4": {
+     "content": "=-PIVOT.VALUE(1,\"budget_expense\")"
+    },
+    "A5": {
+     "content": "=_t(\"Actual result\")"
+    },
+    "B5": {
+     "content": "=PIVOT.VALUE(1,\"actual_amount\")"
+    },
+    "A6": {
+     "content": "=_t(\"Budget result\")"
+    },
+    "B6": {
+     "content": "=PIVOT.VALUE(1,\"budget_amount\")"
+    },
+    "A7": {
+     "content": "=_t(\"Pending revenue\")"
+    },
+    "B7": {
+     "content": "=PIVOT.VALUE(4,\"budget_revenue\")"
+    },
+    "A8": {
+     "content": "=_t(\"Pending expenses\")"
+    },
+    "B8": {
+     "content": "=-PIVOT.VALUE(4,\"budget_expense\")"
+    },
+    "A12": {
+     "content": "=_t(\"Budgets\")"
+    },
+    "B12": {
+     "content": "=IF(IFERROR(PIVOT.HEADER(6,\"#budget_id\",1),\"\")=\"\",0,1)+IF(IFERROR(PIVOT.HEADER(6,\"#budget_id\",2),\"\")=\"\",0,1)+IF(IFERROR(PIVOT.HEADER(6,\"#budget_id\",3),\"\")=\"\",0,1)+IF(IFERROR(PIVOT.HEADER(6,\"#budget_id\",4),\"\")=\"\",0,1)+IF(IFERROR(PIVOT.HEADER(6,\"#budget_id\",5),\"\")=\"\",0,1)"
+    },
+    "C1": {
+     "content": "=FORMAT.LARGE.NUMBER(B1)"
+    },
+    "C2": {
+     "content": "=FORMAT.LARGE.NUMBER(B2)"
+    },
+    "C3": {
+     "content": "=FORMAT.LARGE.NUMBER(B3)"
+    },
+    "C4": {
+     "content": "=FORMAT.LARGE.NUMBER(B4)"
+    },
+    "C5": {
+     "content": "=FORMAT.LARGE.NUMBER(B5)"
+    },
+    "C6": {
+     "content": "=FORMAT.LARGE.NUMBER(B6)"
+    },
+    "C7": {
+     "content": "=FORMAT.LARGE.NUMBER(B7)"
+    },
+    "C8": {
+     "content": "=FORMAT.LARGE.NUMBER(B8)"
+    },
+    "D7": {
+     "content": "=CONCAT(_t(\"Expenses: \"),TEXT(B8,\"#,##0\"))"
+    },
+    "A14": {
+     "content": "=_t(\"Month\")"
+    },
+    "B14": {
+     "content": "=_t(\"Actual revenue\")"
+    },
+    "C14": {
+     "content": "=_t(\"Actual expenses\")"
+    },
+    "D14": {
+     "content": "=_t(\"Budget revenue\")"
+    },
+    "E14": {
+     "content": "=_t(\"Budget expenses\")"
+    },
+    "A15": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",1),\"\")"
+    },
+    "B15": {
+     "content": "=IF(OR(A15=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",1))"
+    },
+    "C15": {
+     "content": "=IF(OR(A15=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",1))"
+    },
+    "D15": {
+     "content": "=IF(OR(A15=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",1))"
+    },
+    "E15": {
+     "content": "=IF(OR(A15=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",1))"
+    },
+    "A16": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",2),\"\")"
+    },
+    "B16": {
+     "content": "=IF(OR(A16=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",2))"
+    },
+    "C16": {
+     "content": "=IF(OR(A16=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",2))"
+    },
+    "D16": {
+     "content": "=IF(OR(A16=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",2))"
+    },
+    "E16": {
+     "content": "=IF(OR(A16=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",2))"
+    },
+    "A17": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",3),\"\")"
+    },
+    "B17": {
+     "content": "=IF(OR(A17=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",3))"
+    },
+    "C17": {
+     "content": "=IF(OR(A17=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",3))"
+    },
+    "D17": {
+     "content": "=IF(OR(A17=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",3))"
+    },
+    "E17": {
+     "content": "=IF(OR(A17=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",3))"
+    },
+    "A18": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",4),\"\")"
+    },
+    "B18": {
+     "content": "=IF(OR(A18=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",4))"
+    },
+    "C18": {
+     "content": "=IF(OR(A18=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",4))"
+    },
+    "D18": {
+     "content": "=IF(OR(A18=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",4))"
+    },
+    "E18": {
+     "content": "=IF(OR(A18=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",4))"
+    },
+    "A19": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",5),\"\")"
+    },
+    "B19": {
+     "content": "=IF(OR(A19=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",5))"
+    },
+    "C19": {
+     "content": "=IF(OR(A19=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",5))"
+    },
+    "D19": {
+     "content": "=IF(OR(A19=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",5))"
+    },
+    "E19": {
+     "content": "=IF(OR(A19=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",5))"
+    },
+    "A20": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",6),\"\")"
+    },
+    "B20": {
+     "content": "=IF(OR(A20=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",6))"
+    },
+    "C20": {
+     "content": "=IF(OR(A20=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",6))"
+    },
+    "D20": {
+     "content": "=IF(OR(A20=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",6))"
+    },
+    "E20": {
+     "content": "=IF(OR(A20=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",6))"
+    },
+    "A21": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",7),\"\")"
+    },
+    "B21": {
+     "content": "=IF(OR(A21=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",7))"
+    },
+    "C21": {
+     "content": "=IF(OR(A21=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",7))"
+    },
+    "D21": {
+     "content": "=IF(OR(A21=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",7))"
+    },
+    "E21": {
+     "content": "=IF(OR(A21=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",7))"
+    },
+    "A22": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",8),\"\")"
+    },
+    "B22": {
+     "content": "=IF(OR(A22=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",8))"
+    },
+    "C22": {
+     "content": "=IF(OR(A22=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",8))"
+    },
+    "D22": {
+     "content": "=IF(OR(A22=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",8))"
+    },
+    "E22": {
+     "content": "=IF(OR(A22=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",8))"
+    },
+    "A23": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",9),\"\")"
+    },
+    "B23": {
+     "content": "=IF(OR(A23=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",9))"
+    },
+    "C23": {
+     "content": "=IF(OR(A23=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",9))"
+    },
+    "D23": {
+     "content": "=IF(OR(A23=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",9))"
+    },
+    "E23": {
+     "content": "=IF(OR(A23=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",9))"
+    },
+    "A24": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",10),\"\")"
+    },
+    "B24": {
+     "content": "=IF(OR(A24=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",10))"
+    },
+    "C24": {
+     "content": "=IF(OR(A24=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",10))"
+    },
+    "D24": {
+     "content": "=IF(OR(A24=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",10))"
+    },
+    "E24": {
+     "content": "=IF(OR(A24=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",10))"
+    },
+    "A25": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",11),\"\")"
+    },
+    "B25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",11))"
+    },
+    "C25": {
+     "content": "=IF(OR(A25=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",11))"
+    },
+    "D25": {
+     "content": "=IF(OR(A25=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",11))"
+    },
+    "E25": {
+     "content": "=IF(OR(A25=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",11))"
+    },
+    "A26": {
+     "content": "=IFERROR(PIVOT.HEADER(2,\"#date:month\",12),\"\")"
+    },
+    "B26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(2,\"actual_revenue\",\"#date:month\",12))"
+    },
+    "C26": {
+     "content": "=IF(OR(A26=\"\"),\"\",-PIVOT.VALUE(2,\"actual_expense\",\"#date:month\",12))"
+    },
+    "D26": {
+     "content": "=IF(OR(A26=\"\"),\"\",PIVOT.VALUE(2,\"budget_revenue\",\"#date:month\",12))"
+    },
+    "E26": {
+     "content": "=IF(OR(A26=\"\"),\"\",-PIVOT.VALUE(2,\"budget_expense\",\"#date:month\",12))"
+    }
+   },
+   "styles": {},
+   "formats": {
+    "B1:B8": 1,
+    "B15:E26": 1
+   },
+   "borders": {},
+   "conditionalFormats": [],
+   "figures": [],
+   "tables": [],
+   "areGridLinesVisible": false,
+   "isVisible": false,
+   "headerGroups": {
+    "ROW": [],
+    "COL": []
+   },
+   "dataValidationRules": [],
+   "comments": {}
+  }
+ ]
+}

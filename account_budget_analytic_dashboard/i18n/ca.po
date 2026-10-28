@@ -1,0 +1,393 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_budget_analytic_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 10:38+0000\n"
+"PO-Revision-Date: 2026-10-27 23:03+0000\n"
+"Last-Translator: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Achieved"
+msgstr "Assolit"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__actual_amount
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_list
+msgid "Actual"
+msgstr "Real"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__actual_expense
+msgid "Actual Expenses"
+msgstr "Despeses reals"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__actual_revenue
+msgid "Actual Revenue"
+msgstr "Ingressos reals"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Actual expenses"
+msgstr "Despeses reals"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Actual result"
+msgstr "Resultat real"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Actual revenue"
+msgstr "Ingressos reals"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__account_id
+msgid "Analytic Account"
+msgstr "Compte analític"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model,name:account_budget_analytic_dashboard.model_account_analytic_budget_report
+msgid "Analytic Budget vs Actual"
+msgstr "Pressupost analític vs real"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_id
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Analytic Plan"
+msgstr "Pla analític"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_level_1_id
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Analytic Plan (Level 1)"
+msgstr "Pla analític (nivell 1)"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_level_2_id
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Analytic Plan (Level 2)"
+msgstr "Pla analític (nivell 2)"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_level_3_id
+msgid "Analytic Plan (Level 3)"
+msgstr "Pla analític (nivell 3)"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_level_4_id
+msgid "Analytic Plan (Level 4)"
+msgstr "Pla analític (nivell 4)"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__analytic_plan_level_0_id
+msgid "Analytic Plan (Root)"
+msgstr "Pla analític (arrel)"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+#: model:ir.model,name:account_budget_analytic_dashboard.model_crossovered_budget
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__budget_amount
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__budget_id
+#: model:spreadsheet.dashboard,name:account_budget_analytic_dashboard.dashboard_analytic_budget
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_list
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Budget"
+msgstr "Pressupost"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__budget_expense
+msgid "Budget Expenses"
+msgstr "Despeses pressupostades"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__item
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Budget Item"
+msgstr "Partida"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model,name:account_budget_analytic_dashboard.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "Línia de pressupost"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__budget_revenue
+msgid "Budget Revenue"
+msgstr "Ingressos pressupostats"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget and actual by budgetary position"
+msgstr "Pressupost i real per posició pressupostària"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget and actual by line"
+msgstr "Pressupost i real per línia"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget and actual by month"
+msgstr "Pressupost i real per mes"
+
+#. module: account_budget_analytic_dashboard
+#: model_terms:ir.actions.act_window,help:account_budget_analytic_dashboard.action_analytic_budget_report
+msgid ""
+"Budget and actual of every analytic plan and account, month by month. A "
+"budget on an analytic plan is an envelope: what is identified on its "
+"accounts and subplans is part of it, and the rest is pending to identify."
+msgstr ""
+"Pressupost i real de cada pla i compte analític, mes a mes. El pressupost "
+"d'un pla analític és un sobre: el que s'identifica als seus comptes i "
+"subplans en forma part, i la resta queda pendent d'identificar."
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget expenses"
+msgstr "Despeses pressupostades"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget result"
+msgstr "Resultat pressupostat"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budget revenue"
+msgstr "Ingressos pressupostats"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.actions.act_window,name:account_budget_analytic_dashboard.action_analytic_budget_report
+#: model:ir.ui.menu,name:account_budget_analytic_dashboard.menu_analytic_budget_report
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_graph
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_list
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_pivot
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.crossovered_budget_view_form_budget_report
+msgid "Budget vs Actual"
+msgstr "Pressupost vs real"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model,name:account_budget_analytic_dashboard.model_account_budget_post
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__position_id
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Budgetary Position"
+msgstr "Posició pressupostària"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budgetary position"
+msgstr "Posició pressupostària"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#. odoo-python
+#: code:addons/account_budget_analytic_dashboard/controllers/main.py:0
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Budgets"
+msgstr "Pressupostos"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid ""
+"Choose one budget in the Budget filter: the figures of several budgets add "
+"up."
+msgstr ""
+"Trieu un sol pressupost al filtre Pressupost: les xifres de diversos "
+"pressupostos se sumen."
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__company_id
+msgid "Company"
+msgstr "Companyia"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__date
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Date"
+msgstr "Data"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__deviation_amount
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_list
+msgid "Deviation"
+msgstr "Desviació"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__display_name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Expense budget"
+msgstr "Pressupost despeses"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Expenses"
+msgstr "Despeses"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Expenses: "
+msgstr "Despeses: "
+
+#. module: account_budget_analytic_dashboard
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Group By"
+msgstr "Agrupa per"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Line"
+msgstr "Línia"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Month"
+msgstr "Mes"
+
+#. module: account_budget_analytic_dashboard
+#: model_terms:ir.actions.act_window,help:account_budget_analytic_dashboard.action_analytic_budget_report
+msgid "No budget yet"
+msgstr "Encara no hi ha pressupost"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Pending"
+msgstr "Pendent"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Pending expenses"
+msgstr "Despeses pendents"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Pending revenue"
+msgstr "Ingressos pendents"
+
+#. module: account_budget_analytic_dashboard
+#: model:ir.model.fields,field_description:account_budget_analytic_dashboard.field_account_analytic_budget_report__is_pending
+#: model_terms:ir.ui.view,arch_db:account_budget_analytic_dashboard.account_analytic_budget_report_view_search
+msgid "Pending to Identify"
+msgstr "Pendent d'identificar"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#. odoo-python
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+#: code:addons/account_budget_analytic_dashboard/models/budget_report.py:0
+msgid "Pending to identify"
+msgstr "Pendent d'identificar"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Period"
+msgstr "Període"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Result"
+msgstr "Resultat"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Result budget"
+msgstr "Pressupost resultat"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Revenue"
+msgstr "Ingressos"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Revenue budget"
+msgstr "Pressupost ingressos"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Spent"
+msgstr "Gastat"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-python
+#: code:addons/account_budget_analytic_dashboard/models/account_budget.py:0
+msgid ""
+"The budgetary positions of a budget cannot share accounts.\n"
+"\n"
+"Budget: %(budget)s\n"
+"Account: %(account)s\n"
+"Positions: %(first)s, %(second)s"
+msgstr ""
+"Les posicions pressupostàries d'un pressupost no poden compartir comptes.\n"
+"\n"
+"Pressupost: %(budget)s\n"
+"Compte: %(account)s\n"
+"Posicions: %(first)s, %(second)s"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "Total"
+msgstr "Total"
+
+#. module: account_budget_analytic_dashboard
+#. odoo-javascript
+#: code:addons/account_budget_analytic_dashboard/data/files/budget_dashboard.json:0
+msgid "vs budget"
+msgstr "vs pressupost"
