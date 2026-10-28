@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crossovered_budget_view_form" model="ir.ui.view">
+        <field name="name">crossovered.budget.form.analytic.plan</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget_oca.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='crossovered_budget_line_ids']/list/field[@name='analytic_account_id']"
+                   position="before">
+                <field name="analytic_plan_id"
+                       groups="analytic.group_analytic_accounting"
+                       optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='crossovered_budget_line_ids']/list/field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="required">not analytic_plan_id</attribute>
+                <attribute name="optional">show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='crossovered_budget_line_ids']/form//field[@name='analytic_account_id']"
+                   position="before">
+                <field name="analytic_plan_id"
+                       groups="analytic.group_analytic_accounting"/>
+            </xpath>
+            <xpath expr="//field[@name='crossovered_budget_line_ids']/form//field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="required">not analytic_plan_id</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crossovered_budget_line_search" model="ir.ui.view">
+        <field name="name">crossovered.budget.line.search.analytic.plan</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id"
+               ref="account_budget_oca.view_crossovered_budget_line_search"/>
+        <field name="arch" type="xml">
+            <field name="analytic_account_id" position="before">
+                <field name="analytic_plan_id"/>
+            </field>
+            <field name="analytic_account_id" position="after">
+                <group expand="0" string="Group By">
+                    <filter name="group_by_budget"
+                            string="Budget"
+                            context="{'group_by': 'crossovered_budget_id'}"/>
+                    <filter name="group_by_analytic_plan"
+                            string="Analytic Plan"
+                            context="{'group_by': 'analytic_plan_id'}"/>
+                    <filter name="group_by_analytic_account"
+                            string="Analytic Account"
+                            context="{'group_by': 'analytic_account_id'}"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_crossovered_budget_line_tree" model="ir.ui.view">
+        <field name="name">crossovered.budget.line.list.analytic.plan</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id"
+               ref="account_budget_oca.view_crossovered_budget_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="analytic_account_id" position="before">
+                <field name="analytic_plan_id"
+                       groups="analytic.group_analytic_accounting"
+                       optional="show"/>
+            </field>
+            <field name="analytic_account_id" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_crossovered_budget_line_form" model="ir.ui.view">
+        <field name="name">crossovered.budget.line.form.analytic.plan</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id"
+               ref="account_budget_oca.view_crossovered_budget_line_form"/>
+        <field name="arch" type="xml">
+            <field name="analytic_account_id" position="before">
+                <field name="analytic_plan_id"
+                       groups="analytic.group_analytic_accounting"/>
+            </field>
+        </field>
+    </record>
+</odoo>
